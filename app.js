@@ -9,6 +9,8 @@ const logger = require('morgan');
 const indexRouter = require('./controllers/index');
 const usersRouter = require('./controllers/users');
 
+const books = require('./controllers/books');
+
 const app = express();
 
 // view engine setup
@@ -23,6 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+// map all the request of books to redirect them
+app.use('/books', books);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
