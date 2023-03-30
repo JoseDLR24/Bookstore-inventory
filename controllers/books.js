@@ -33,14 +33,28 @@ router.post("/create", async (req, res) => {
 router.get('/delete/:_id', (req, res) => {
   books.remove({ _id: req.params._id }, (err) => {
       if (err) {
-          console.log(err);
+        console.log(err);
       }
       else {
-          res.redirect('/books');
-          // console message to keep track of errors
-          console.log('There was an issue at the moment to delete this book, please check before you continue on the application')
+        res.redirect('/books');
+        // console message to keep track of errors
+        console.log('There was an issue at the moment to delete this book, please check before you continue on the application')
       }
   });
+});
+
+/* GET /edit/abc123 => fetch & display selected employer */
+router.get('/edit/:_id', (req, res) => {
+  books.findById(req.params._id, (error, books) => {
+    if (error) {
+      console.log(error);
+    }
+    else{
+      res.render('books/edit', {
+        
+      });
+    }
+  });              
 });
 
 module.exports = router;

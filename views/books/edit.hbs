@@ -4,34 +4,34 @@
         {{!-- Book Title Container --}}
         <div class="mb-3 BookTitleContainer">
             <label for="BookTitle" class="form-label">Book Title:</label>
-            <input type="text" class="form-control" id="BookTitle" name="title" >
+            <input type="text" class="form-control" id="BookTitle" name="title" value="{{books.title}}">
         </div>
         {{!-- Book Genre Container --}}
         <div class="mb-3 BookGenreContainer">
             <label for="BookGenre" class="form-label">Book Genre:</label>
-            <input type="text" class="form-control" id="BookGenre" name="genre" >
+            <input type="text" class="form-control" id="BookGenre" name="genre" value="{{books.genre}}">
         </div>
         {{!-- Audience Target Container --}}
         <div class="mb-3 AudienceTargetContainer">
             <label for="AudienceTarget" class="form-label">Audience Target:</label>
-            <input type="number" class="form-control" id="AudienceTarget" name="audiencetarget">
+            <input type="number" class="form-control" id="AudienceTarget" name="audiencetarget" value="{{books.audiencetarget}}">
         </div>
         {{!-- Synopsis Container --}}
         <div class="mb-3 SynopsisContainer">
             <label for="Synopsis" class="form-label">Synopsis:</label>
-            <textarea name="synopsis" id="Synopsis" ></textarea>
+            <textarea name="synopsis" id="Synopsis" >{{books.synopsis}}</textarea>
         </div>
         {{!-- Date Published Container --}}
         <div class="mb-3 DateContainer">
             <label for="DatePublished" class="form-label">Date Published:</label>
-            <input type="date" class="form-control" id="DatePublished" name="datepublished" >
+            <input type="date" class="form-control" id="DatePublished" name="datepublished" value="{{datepublished}}" >
         </div>
         {{!-- Price Container --}}
         <div class="mb-3 PriceContainer">
             <label for="BookPrice" class="form-label">Price:</label>
-            <input type="number" class="form-control" id="BookPrice" name="price">
+            <input type="number" class="form-control" id="BookPrice" name="price"
+            value="{{price}}">
         </div>
         <button type="submit" class="btn btn-primary">Add to the Inventory</button>
     </form>
 </div>
-
