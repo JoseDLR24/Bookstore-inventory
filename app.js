@@ -8,7 +8,7 @@ const logger = require('morgan');
 // Controllers
 const indexRouter = require('./controllers/index');
 const usersRouter = require('./controllers/users');
-
+// My own controllers
 const books = require('./controllers/books');
 
 const app = express();
@@ -22,6 +22,22 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// use dotenv to read .env file with config vars
+if (process.env.NODE_ENV != 'production') {
+  require('dotenv').config()
+}
+
+// mongodb connection using mongoose
+const mongoose = require('mongoose');
+
+mongoose.connect(process.env.CONNECTION_STRING)
+.then((res) => {
+  console.log('Connected to MongoDB');
+})
+.catch(() => {
+  console.log('Connection to MongoDB Failed');
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
