@@ -1,7 +1,6 @@
-{{!-- <h1>Employer List</h1>
-{{#if user}}
-    <a href="/employers/create">Add a New Employer</a>
-{{/if}} --}}
+<h1>Inventory of Books</h1>
+<a href="/books/create">Add a new book to your Inventory</a>
+
 <table class="table table-striped table-hover">
     <thead>
         <th>Name</th>
@@ -23,14 +22,14 @@
                 <td>{{this.synopsis}}</td>
                 <td>{{this.datepublished}}</td>
                 <td>{{this.price}}</td>
-                {{#if ../user}}
+                {{!-- {{#if ../user}} --}}
                     <td class="text-center">
-                        <a href="/employers/edit/{{this._id}}" title="Edit"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a href="/employers/delete/{{this._id}}" title="Delete" onclick="return confirmDelete();">
-                            <i class="fa-solid fa-trash-can"></i>
+                        <a href="/books/edit/{{this._id}}" title="Edit"><i class="fa-solid fa-pen-to-square"></i>Edit</a>
+                        <a href="/books/delete/{{this._id}}" title="Delete" onclick="return confirmDelete();">
+                            <i class="fa-solid fa-trash-can"></i>Delete
                         </a>                
                     </td>
-                {{/if}}
+                {{!-- {{/if}} --}}
             </tr>
         {{/each}}
     </tbody>
