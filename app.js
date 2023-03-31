@@ -10,6 +10,7 @@ const indexRouter = require('./controllers/index');
 const usersRouter = require('./controllers/users');
 // My own controllers
 const books = require('./controllers/books');
+const auth = require('./controllers/auth');
 
 const app = express();
 
@@ -43,6 +44,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 // map all the request of books to redirect them
 app.use('/books', books);
+app.use('/auth', auth);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

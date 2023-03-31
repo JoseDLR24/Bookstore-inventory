@@ -22,3 +22,56 @@ main {
     padding-bottom: 50px;
     margin: 2% 10%
 }
+
+/* Center the form on the page */
+form {
+display: flex;
+flex-direction: column;
+align-items: auto;
+}
+
+/* Style the form labels */
+label {
+display: block;
+font-weight: bold;
+margin-bottom: 0.5rem;
+}
+
+/* Style the form inputs */
+input[type="email"],
+input[type="password"] {
+display: block;
+padding: 0.5rem;
+border: 1px solid #ccc;
+border-radius: 0.25rem;
+font-size: 1rem;
+margin-bottom: 1rem;
+width: 100%;
+max-width: 300px;
+}
+
+/* Style the form submit button */
+input[type="submit"] {
+background-color: #333;
+color: #fff;
+padding: 0.5rem 1rem;
+border: none;
+border-radius: 0.25rem;
+font-size: 1rem;
+cursor: pointer;
+width: 20%;
+}
+
+input[type="submit"]:hover {
+background-color: #444;
+}
+
+#cta {
+    background-color: #444;
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 20px;
+}
